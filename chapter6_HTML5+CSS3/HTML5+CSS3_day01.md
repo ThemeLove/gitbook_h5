@@ -27,3 +27,35 @@
 	e:equals 	等于
 	g:great		更大
 	
+####4.html5新增表单属性type类型 
+	email     邮箱格式
+	color 	  拾色器
+	url 	  只能输入url格式
+	number 	  只能输入数字
+	range 	  范围，滑动条
+	tel 	  号码
+	search    搜索框
+	time      时间
+	date      日期
+	week 	  周
+	month	  月 
+
+####5.html5新增表单元素 
+	datalist    数据列表标签,input输入框属性list指定datalist的id,组合可以做下拉选择菜单
+    output      输出
+    keygen      加密
+    meter       度量器 属性value、min、max、low、high,当value小于low或高于high时，会显示警告色
+    progress    进度条 
+
+####6.html5新增表单属性 
+	placeholder		提示文字（占位符） 
+	autofocus		自动获取焦点，属性值和属性名相同时，可以不写属性值
+	autocomplete	自动匹配已经输入的内容，on(默认开启)，off 关闭 
+	required	    必填项，空值会提示 
+	multiple		多选 
+	novalidata		关闭表单自动验证功能（只能加给form） 
+    pattern			正则表达式
+	
+####7.html5新增表单事件 
+    oninput        当用户输入的时候触发
+    oninvalid      当验证不通过时触发，可用于设置提示文字 this.setCustomValidity("提示文字")
