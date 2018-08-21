@@ -102,7 +102,36 @@
         水平位移和竖直位移：负值---阴影在上，正值---阴影在下
         多个阴影效果并列书写，使用逗号隔开 
 
-####CSS3盒子模型 
+####CSS3盒子模型  
+	传统盒子模型 
+	1.宽高:border+padding+content 
+	2.内容区域大小不变 
+	3.总体大小变化  
+	CSS3盒子模型 
 	三个盒子：content-box padding-box border-box 
-	box-sizing:border-box（内减模式） / content-box(外加模式)（默认值） 
-	box-sizing:content-box （CSS2中的盒子模型）
+
+	box-sizing:border-box（内减模式）	：设置盒子模型中最大盒子大小，如果再加上border和padding,只会减小盒子内容区域 
+
+	content-box(外加模式)（默认值） ：设置盒子内容区域的大小，如果再加上border和padding,整体盒子大小会增大
+
+	当box-sizing:content-box 时就是传统CSS中的盒子模型 
+
+####CSS3的现状 
+	css3浏览器支持程度较差，需要添加浏览器私有化前缀  
+    兼容各大浏览器写法,私有化前缀
+    -webkit-       google 苹果
+    -moz-          火狐
+    -o-            欧朋
+    -ms-           微软  
+
+	最后加上无私有化前缀的正常写法 
+
+	示例： 
+    background: -webkit-linear-gradient(red,green,blue);     兼容google、苹果safari
+    background: -moz-linear-gradient(red,green,blue);		 兼容火狐 
+    background: -o-linear-gradient(red,green,blue);		     兼容欧朋 
+    background: -ms-radial-gradient(red,green,blue);		 兼容微软IE
+    background: linear-gradient(red,green,blue);			 无私有化前缀正常写法
+
+
+            
