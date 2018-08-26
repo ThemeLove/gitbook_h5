@@ -13,7 +13,7 @@
 	border-radius-bottom-left-radius 
 	border-radius-bottom-right-radius 
 
-####2.边框圆角 box-shadow
+####2.边框阴影 box-shadow
       边框阴影
       box-shadow:水平位移 竖直位移 模糊程度 阴影大小 阴影颜色 内外阴影模式（inset） 
 ####3.边框图片 
