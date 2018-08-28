@@ -55,4 +55,24 @@
      辐射半径：x半径，y半径
      中心点位置：at left right center bottom top   或者具体x y点坐标
      起始颜色   颜色渐变位置
-     终止颜色   颜色渐变位置
+     终止颜色   颜色渐变位置 
+####10.过渡 （transition） 
+	语法格式：一些属性可以省略
+	transition:过渡属性1 持续时间 运动曲线 延迟时间，过渡属性2 持续时间 运动曲线 延迟时间，.....
+	例如：
+	transition:width 2s,background-color 2s;
+	如果多个过渡特性是一样的，可以简写 
+	transition:all 2s linear 1s; 
+####11. 过渡属性详解
+        transition-property   过渡属性
+        transition-duration   过渡持续时间
+        transition-delay         过渡延迟
+        transition-timing-function 运动曲线
+            linear:匀速
+            ease:减速
+            ease-in:加速
+            ease-out:减速
+            ease-in-out:先加速后减速
+
+        一般都会简写：
+        transition:过渡属性 过渡时间 运动曲线 延迟时间
