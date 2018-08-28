@@ -28,3 +28,31 @@
 	1.取值：数值 百分比  
 	2.cover(覆盖):会保证完全覆盖盒子，但不能保证完整显示  
 	3.contain（包含）:保证背景图片最大化的在盒子中等比例显示，但不保证显示完整  
+	4.background-size:100% 100%;这种写法背景图片会随着浏览器窗口大小缩放而变形。
+      background-size:cover:全屏背景自适应，效果更好 
+	5.注意：浏览器body默认高度是0 
+####5.背景图片的原点 background-origin
+     background-origin:border-box; 背景图片以盒子模型border-box为原点开始平铺
+     background-origin:padding-box;背景图片以盒子模型padding-box为原点开始平铺，默认值
+     background-origin:content-box;背景图片以盒子模型content-box为原点开始平铺 
+####6.背景裁剪 background-clip 通常要配合background-origin 使用 
+	只保留（显示）background-clip对应盒子模型的背景，其他部分不显示 
+####7.多背景 background   
+      写法同text-shadow、box-shadow一样多个效果并列书写，使用逗号隔开，可以单独指定位置一张背景图片的位置，如果设置背景颜色，一定要写在最后
+      例如：background: url("../images/bg1.png") no-repeat left top
+                        ,url("../images/bg2.png") no-repeat right top
+                        ,url("../images/bg3.png") no-repeat right bottom
+                        ,url("../images/bg4.png") no-repeat left bottom
+                        ,url("../images/bg5.png") no-repeat center #FFFFE0;/*背景颜色一定要写在最后*/ 
+
+##-------------------------------下午------------------------------- 
+####8.线性渐变 （linear-gradient）  
+      方向：to left ,to right ,to top ,to bottom
+      起始颜色 颜色渐变位置
+      终止颜色 颜色渐变位置
+####9.径向渐变 （radial-gradient）
+     radial-gradient(辐射半径 at 中心的位置，起始颜色 颜色渐变位置，终止颜色 颜色渐变位置)
+     辐射半径：x半径，y半径
+     中心点位置：at left right center bottom top   或者具体x y点坐标
+     起始颜色   颜色渐变位置
+     终止颜色   颜色渐变位置
