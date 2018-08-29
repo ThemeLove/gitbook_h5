@@ -75,4 +75,8 @@
             ease-in-out:先加速后减速
 
         一般都会简写：
-        transition:过渡属性 过渡时间 运动曲线 延迟时间
+        transition:过渡属性 过渡时间 运动曲线 延迟时间 
+####12.transform 转换 
+       transform:rotate(range) 旋转角度
+       transform:translate(水平位移，竖直位移)
+	   transform:scale(水平缩放，竖直缩放)
