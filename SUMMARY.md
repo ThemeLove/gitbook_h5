@@ -5,3 +5,4 @@
 	* [第三天](chapter6_HTML5+CSS3/HTML5+CSS3_day03.md) 
 	* [第四天](chapter6_HTML5+CSS3/HTML5+CSS3_day04.md) 
 	* [第五天](chapter6_HTML5+CSS3/HTML5+CSS3_day05.md) 
+	* [第六天](chapter6_HTML5+CSS3/HTML5+CSS3_day06.md)
