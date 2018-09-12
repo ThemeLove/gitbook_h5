@@ -24,12 +24,78 @@
 
 ##-------------------------------下午-------------------------------   
 ####6.web字体
-	优点：  
-	 	支持程度好 
-	 	.eot字体是IE专用字体 
-	使用web字体步骤 
-		声明字体：@font-face{
-					font-family:"字体名称"；
-					src:url();
-				}
+	优点：支持程度好；.eot字体是IE专用字体 
+	使用web字体步骤： 
+	第一步：使用font-face声明字体：
+		   @font-face{
+				font-family:"字体名称"；
+				src:url();
+		   }  
+		   例如：
+		   @font-face {
+				font-family: 'webfont';
+    			src: url('webfont.eot'); /* IE9*/
+    			src: url('webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    			url('webfont.woff') format('woff'), /* chrome、firefox */
+    			url('webfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    			url('webfont.svg#webfont') format('svg'); /* iOS 4.1- */
+			}
+	第二步：定义使用webfont的样式：
+		   例如：
+		   .web-font{
+    			font-family:"webfont" !important;
+    			font-size:16px;font-style:normal;
+   		 		-webkit-font-smoothing: antialiased;
+    			-webkit-text-stroke-width: 0.2px;
+    			-moz-osx-font-smoothing: grayscale;
+			}
+	第三步：为文字加上对应的样式：
+		   例如：
+			<i class="web-font">知识就像内-裤，看不见但很重要。</i>  
+
+####7.icon字体 
+	有点：放大不失真，改变颜色，将图片当做字体使用
+    使用icon字体步骤： 
+	第一步：使用font-face声明字体：
+		   @font-face{
+				font-family:"字体名称"；
+				src:url();
+		   }  
+		   例如： 
+		   @font-face {
+            	font-family: 'iconfont';
+            	src: url('font/iconfont.eot');
+            	src: url('font/iconfont.eot?#iefix') format('embedded-opentype'),
+            	url('font/iconfont.woff') format('woff'),
+            	url('font/iconfont.ttf') format('truetype'),
+            	url('font/iconfont.svg#iconfont') format('svg');
+        	}
+	第二步：定义使用iconfont的样式（可以结合伪元素）：
+		   例如： 
+	       .icon-font{
+	            display: block;
+	            width: 600px;
+	            font-size:100px;
+	            color: #000000;
+	            position: relative;
+	            text-align: center;
+	            margin: 100px auto;
+	            border: 1px solid #000;
+	        }
+	        /*添加伪元素，更加语义化*/
+	       .icon-font::before{
+	            font-family:"iconfont";
+	            position: absolute;
+	            content: '\e603';
+	            color: red;
+	            left: -11px;
+	            top: 17px;
+	        }
+	第三步：添加定义好的样式：
+		  	例如：
+			<span class="icon-font">扫码支付</span>
+		
+	
+
+
 
