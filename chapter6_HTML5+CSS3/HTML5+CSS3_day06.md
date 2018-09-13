@@ -25,5 +25,26 @@
 				ondragenter:应用于目标元素，当拖拽元素进入时调用，以鼠标指示为判断依据 
 				ondragover:应用于目标元素，当拖拽元素停留在目标元素上时调用 
 				ondragleave:应用于目标元素，当拖拽元素离开目标元素时调用，以鼠标指示为判断依据 
-				ondrop:应用于目标元素，当拖拽元素在目标元素上松开鼠标时调用
-   			
+				ondrop:应用于目标元素，当拖拽元素在目标元素上松开鼠标时调用  
+
+##-------------------------------下午-------------------------------    
+####3.全屏模式（任何元素）  
+	HTML5规范允许用户自定义网页上任一元素全屏显示。
+	 	requestFullscreen() 开启全屏显示
+	 	cancleFullscreen() 关闭全屏显示
+	不同浏览器需要添加前缀如：
+	 	webkitRequestFullScreen、mozRequestFullScreen
+	 	webkitCancleFullScreen、mozCancleFullScreen
+	通过document.fullScreen检测当前是否处于全屏
+	不同浏览器需要添加前缀
+	    document.webkitIsFullScreen、document.mozFullScreen
+	全屏伪类
+		:full-screen {}、:-webkit-full-screen {}、:moz-full-screen {} 
+	例如：
+		.box::full-screen{
+			background-color:red;//.box 全屏状态下背景变为红色
+		}
+			
+####4.web存储 
+	sessionStorage:session(会话，会议) 5M 当前窗口关闭时数据销毁，在内存中。
+	localStorage:20M 永久生效，除非手动删除，清理垃圾，否则始终在硬盘上。
