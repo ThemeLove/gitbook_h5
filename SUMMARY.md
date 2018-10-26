@@ -1,5 +1,6 @@
 #summary 
 * [常用快捷键](common_shortcuts.md)
+* [常用知识点](common_knowledge_points.md)
 * [第七章-HTML5+CSS3]()
 	* [第一天](chapter07_HTML5+CSS3/HTML5+CSS3_day01.md) 
 	* [第二天](chapter07_HTML5+CSS3/HTML5+CSS3_day02.md) 
