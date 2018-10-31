@@ -8,4 +8,6 @@
 	例如：比如text-align,比如li>a>img+p这种布局，给li设置了 
 		 text-align属性,那么a标签也就继承了这种属性，其中的img和p也都会水平居中。 
 	不可以继承的属性：display 
-	例如：display,比如div>a>img+p这种布局，给a标签设置宽高没有用，因为a不是块级元素，即使它的父级元素是div是块级元素（display:block）,也不行；需要手动给a添加display:block,设置的宽高才有效。
+	例如：display,比如div>a>img+p这种布局，给a标签设置宽高没有用，因为a不是块级元素，即使它的父级元素是div是块级元素（display:block）,也不行；需要手动给a添加display:block,设置的宽高才有效。 
+
+####4.使用js添加的样式为行内式样式，可以通过审查元素查看。
