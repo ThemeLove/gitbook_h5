@@ -11,3 +11,5 @@
 	例如：display,比如div>a>img+p这种布局，给a标签设置宽高没有用，因为a不是块级元素，即使它的父级元素是div是块级元素（display:block）,也不行；需要手动给a添加display:block,设置的宽高才有效。 
 
 ####4.使用js添加的样式为行内式样式，可以通过审查元素查看。
+####5.touchstart、touchmove、touchend是移动端特有事件。
+####6.webkitTransitionEnd :添加过渡结束事件，该事件是C3新添加事件，需要添加浏览器私有化前缀.
