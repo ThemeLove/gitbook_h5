@@ -9,15 +9,15 @@
 	事件绑定： v-on:事件名 
 例如： 		
 ```javascript
-	   <button v-on:click="doThis"></button>
-	   <button @click="doThis"></button>
+	 <button v-on:click="doThis"></button>
+	 <button @click="doThis"></button>
 ``` 
 	属性绑定： v-bind：属性名  
 	例如：<img v-bind:src="imageSrc">
 		
     循环渲染： v-for  
 ####4.父组件和子组件之间传值 
-	1.父组件给子组件传值：父组件给子组件绑定值属性，子组件用props接受
+1.父组件给子组件传值：父组件给子组件绑定值属性，子组件用props接收。  
 例如： 
 父组件绑定传值 
 ```javascript 
@@ -26,7 +26,7 @@
 子组件用props接收： 
 ```javascript 
      export default {
-      props:["outMsgs"],
+     props:["outMsgs"],
     }
 ``` 
 子组件接收后直接使用： 
@@ -46,20 +46,20 @@
 ```  
 父组件事件监听方法：
 ```javascript
-  components:{InnerComponent},
-  methods:{
-    //收到inner组件发来的消息
-    receiveInnerSpeak:function(msg){
-      this.innerMsgs.push(msg||"");
-    },
-  } 
+  	components:{InnerComponent},
+  	methods:{
+    	//收到inner组件发来的消息
+    	receiveInnerSpeak:function(msg){
+      		this.innerMsgs.push(msg||"");
+    	},
+  	} 
 ```
 子组件用emit传值：  
 ```javascript
-      methods:{
-        sendToOut:function () {
-            this.$emit("inner-speak",this.toOutMsg);
-          }
-      }
+   	methods:{
+    sendToOut:function () {
+         this.$emit("inner-speak",this.toOutMsg);
+        }
+    }
 ```
 
