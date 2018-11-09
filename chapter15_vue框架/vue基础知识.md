@@ -25,8 +25,8 @@
 ``` 
 子组件用props接收： 
 ```javascript 
-     export default {
-     props:["outMsgs"],
+      export default {
+      props:["outMsgs"],
     }
 ``` 
 子组件接收后直接使用： 
@@ -55,8 +55,8 @@
   	} 
 ```
 子组件用emit传值：  
-```javascript
-   	methods:{
+```javascript  
+	methods:{
     sendToOut:function () {
          this.$emit("inner-speak",this.toOutMsg);
         }
