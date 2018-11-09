@@ -7,17 +7,54 @@
 	渲染数据： v-text   v-html	{{}}
 	控制显示： v-if(直接不渲染)	v-show（通过display:none来控制） 
 	事件绑定： v-on:事件名 
-	例如：		
-	```javascript
+例如： 		
+```javascript
 	   <button v-on:click="doThis"></button>
 	   <button @click="doThis"></button>
-	``` 
+``` 
 	属性绑定： v-bind：属性名  
 	例如：<img v-bind:src="imageSrc">
 		
     循环渲染： v-for  
-####4.父控件和子控件之间传值 
-	1.父控件给子控件传值：父控件给子控件绑定值属性，子控件用props接受。
+####4.父组件和子组件之间传值 
+	1.父组件给子组件传值：父组件给子组件绑定值属性，子组件用props接受
+例如： 
+父组件绑定传值 
+```javascript 
+    <inner-component v-bind:outMsgs="outMsgs"></inner-component> 
+``` 
+子组件用props接收： 
+```javascript 
+     export default {
+      props:["outMsgs"],
+    }
+``` 
+子组件接收后直接使用： 
+```javascript 
+    <ul>
+      <li v-for="outMsg in outMsgs">
+        {{outMsg}}
+      </li>
+    </ul>
+```
+
+2.子组件给父组件传值：父组件给子组件绑定方法监听，子组件用this.$emit("functionName",value)传值
+例如：  
+父组件给子组件绑定事件接收： 
+```javascript 
+    <inner-component v-on:inner-speak="receiveInnerSpeak"></inner-component> 
+```  
+父组件事件监听方法：
+```javascript
+  components:{InnerComponent},
+  methods:{
+    //收到inner组件发来的消息
+    receiveInnerSpeak:function(msg){
+      this.innerMsgs.push(msg||"");
+    },
+  } 
+```
+子组件用emit传值：  
 ```javascript
       methods:{
         sendToOut:function () {
@@ -26,23 +63,3 @@
       }
 ```
 
-2.子控件给父控件传值：父控件给子控件绑定方法监听，子控件用this.$emit("functionName",value).
-
-```	javascript
-function getPrimeNumbers(num) {
-            document.writeln(num+"以内的质数有：</br>");
-            for (var i=1;i<num;i++){
-                var isPrime=true;
-                for (var j=2;j<i;j++){
-                    var temp=i%j;
-                    if(temp==0){
-                        isPrime=false;
-                        break;
-                    }
-                }
-                if (isPrime){
-                    document.writeln(i+"</br>");
-                }
-            }
-        }
-```
