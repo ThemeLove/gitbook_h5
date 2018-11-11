@@ -14,4 +14,5 @@
 	* [移动web知识点](chapter09_移动web/移动web知识点.md)
 * [第十五章-vue框架]() 
 	* [项目搭建](chapter15_vue框架/项目搭建.md) 
-	* [vue基础知识](chapter15_vue框架/vue基础知识.md)
+	* [vue基础知识](chapter15_vue框架/vue基础知识.md) 
+	* [webpack打包](chapter15_vue框架/webpack打包.md)
