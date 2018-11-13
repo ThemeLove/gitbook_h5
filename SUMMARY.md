@@ -16,3 +16,5 @@
 	* [项目搭建](chapter15_vue框架/项目搭建.md) 
 	* [vue基础知识](chapter15_vue框架/vue基础知识.md) 
 	* [webpack打包](chapter15_vue框架/webpack打包.md)
+	* [vue-router](chapter15_vue框架/vue-router.md)
+	* [vue-resource](chapter15_vue框架/vue-resource.md)
