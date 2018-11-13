@@ -123,13 +123,16 @@
 
 11.循环：itar----->快速生成循环代码
 
-		缩写：itar 
-		生成：			
-			for (var i = 0; i < array.length; i++) { 
-                var obj = array[i]; 
-            } 
+	缩写：itar 
+	生成：			
+		for (var i = 0; i < array.length; i++) { 
+             var obj = array[i]; 
+        }  
+12.假数乱文：lorem+[num]----->可以在标签内随机生成指定num的假文,可用于快速填充内容测试效果  
 
-12.供应商模式：   
+	例如：lorem1000----->可以随机生成1000个单词的随机乱文
+
+13.供应商模式：   
 	
 	缩写：-w ;-m ;-s ;-o
 	w 表示 -webkit-
@@ -137,11 +140,11 @@
 	s 表示 -ms-
 	o 表示 -o- 
 
-13.meta:vp----->快速生成移动端开发meta 
+14.meta:vp----->快速生成移动端开发meta 
 		
-		缩写：meta:vp 
-		生成：
-			<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"> 
+	缩写：meta:vp 
+	生成：
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"> 
 
 ##其他常用缩写： 
 	缩写：bd+
