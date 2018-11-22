@@ -13,3 +13,5 @@
 ####4.使用js添加的样式为行内式样式，可以通过审查元素查看。
 ####5.touchstart、touchmove、touchend是移动端特有事件。
 ####6.webkitTransitionEnd :添加过渡结束事件，该事件是C3新添加事件，需要添加浏览器私有化前缀.
+####7.white-space:nowrap :可以让内容在一行，不换行
+####8.让子控件顶端对齐可以让设置父控件font-size:0,让后在给要对齐的子控件这种display:inline-block,vertical-align:top
