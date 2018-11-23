@@ -14,4 +14,63 @@
 ####5.touchstart、touchmove、touchend是移动端特有事件。
 ####6.webkitTransitionEnd :添加过渡结束事件，该事件是C3新添加事件，需要添加浏览器私有化前缀.
 ####7.white-space:nowrap :可以让内容在一行，不换行
-####8.让子控件顶端对齐可以让设置父控件font-size:0,让后在给要对齐的子控件这种display:inline-block,vertical-align:top
+####8.让子控件顶端对齐可以让设置父控件font-size:0,让后在给要对齐的子控件这种display:inline-block,vertical-align:top 
+####9.window.location对象包含有关当前URL信息，属性包括：
+	hash 	设置或返回从井号 (#) 开始的 URL（锚）。
+	host 	设置或返回主机名和当前 URL 的端口号。
+	hostname 	设置或返回当前 URL 的主机名。
+	href 	设置或返回完整的 URL。
+	pathname 	设置或返回当前 URL 的路径部分。
+	port 	设置或返回当前 URL 的端口号。
+	protocol 	设置或返回当前 URL 的协议。
+	search 	设置或返回从问号 (?) 开始的 URL（查询部分） 
+####10.Vue动态添加可追踪的响应式属性：（Vue不允许在已经创建的实例上动态添加新的根级响应式属性，要想属性被追踪，要在组件data中声明，不然普通方法动态添加属性，不能被追踪）。
+	然而可以使用 ：
+	Vue.set(object,key,value)方法将响应属性添加到实例上,Vue.set(vm.someObject,"b",2)； 
+	您也可以使用vm.$set实例方法，这也是全局Vue.set方法的别名。this.$set(this.someObject,"b",2);	
+####11.Object.assign() 或 _.extend() 方法来添加属性，可以向已有对象添加多个属性，但是，这样添加到对象上的新属性不会触发更新。在这种情况下可以创建一个新的对象，让它包含原对象的属性和新的属性：
+	// 代替 `Object.assign(this.someObject, { a: 1, b: 2 })`
+		this.someObject = Object.assign({}, this.someObject, { a: 1, b: 2 })
+####12.keep-alive是Vue内置的一个组件，可以使被包含的组件保留状态，或者避免重新渲染。
+	a.普通用法：
+		<keep-alive>
+		  <component>
+		    <!-- 该组件将被缓存！ -->
+		  </component>
+		</keep-alive>
+
+	b.结合include和exclude属性：
+		include-字符串或正则表达式，只有匹配的组件会被缓存
+		exclude-字符串或正则表达式，任何匹配的组件都不会被缓存
+		
+		//组件 a
+		export default {
+		  name: 'a',
+		  data () {
+		    return {}
+		  }
+		}
+	
+		<keep-alive include="a">
+		  <component>
+		    <!-- name 为 a 的组件将被缓存！ -->
+		  </component>
+		</keep-alive>可以保留它的状态或避免重新渲染
+		
+		
+		<keep-alive exclude="a">
+		  <component>
+		    <!-- 除了 name 为 a 的组件都将被缓存！ -->
+		  </component>
+		</keep-alive>可以保留它的状态或避免重新渲染
+
+	
+	c.结合vue-router的用法
+		router-view也是一个组件，如果直接被包在keep-alive里面，所有路径匹配到的视图组件都会被缓存：
+		
+		<keep-alive>
+		    <router-view>
+		        <!-- 所有路径匹配到的视图组件都会被缓存！ -->
+		    </router-view>
+		</keep-alive>
+
