@@ -87,7 +87,7 @@ webpack:本质上，webpack 是一个现代 JavaScript 应用程序的静态模�
 		
 		例子：
 		module: {
-		 loaders: [
+		 rules: [
 					  {
 						test: /\.css$/, //定义匹配的规则，匹配.css文件
 						loader: "style!css?sourceMap!postcss"//指定用什么loader进行处理匹配到的.css文件，多个loader可以串联写，webpack的处理规则是从右往左执行。即先执行postcss----->css----->style
@@ -110,7 +110,7 @@ webpack:本质上，webpack 是一个现代 JavaScript 应用程序的静态模�
 		安装：npm install --save-dev babel-core babel-preset-es2015 babel-loader jsx-loader 
 		
 		 module: {
-			loaders: [
+			rules: [
 						 {
 							test: /\.js$/, //定义匹配的规则
 				            loader: "babel", exclude: /node_modules/ //指定loader处理
@@ -128,7 +128,7 @@ webpack:本质上，webpack 是一个现代 JavaScript 应用程序的静态模�
 	  	安装：npm install --save-dev url-loadr
 		
 		module: {
-		   loaders: [
+		   rules: [
 						 {
 							test: /\.(jpg|png)$/,//定义匹配的规则
 						    loader: "url?limit=8192"//指定loader处理，并传参数
@@ -143,7 +143,7 @@ webpack:本质上，webpack 是一个现代 JavaScript 应用程序的静态模�
 		安装：npm install --save-dev file-loader
 		
 		module: {
-		   loaders: [
+		   rules: [
 		  				{
 						   test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/,//定义匹配的规则
 						   loader: 'file'//指定loader处理
@@ -157,7 +157,7 @@ webpack:本质上，webpack 是一个现代 JavaScript 应用程序的静态模�
 		安装：npm install --save-dev json-loader
 			
 		module: {
-		   loaders: [
+		   rules: [
 		  				{
 							test: /\.json$/,//定义匹配的规则
 							loader: 'json'//指定loader处理
@@ -170,7 +170,7 @@ webpack:本质上，webpack 是一个现代 JavaScript 应用程序的静态模�
 		安装：npm install --save-dev raw-loader
 			
 		module: {
-		 	loaders: [
+		 	rules: [
 		  				{
 						 	test: /\.html$/,//定义匹配的规则
 						 	loader: 'raw'//指定loader处理
