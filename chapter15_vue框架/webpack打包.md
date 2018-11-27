@@ -28,9 +28,8 @@ webpack:本质上，webpack 是一个现代 JavaScript 应用程序的静态模�
     			 }  
 ##output(输出) 
 	path:打包后的目录 
-		例如：
+		例如：path: 'E:\\WorkSpace\\Sublime\\H5Learn\\15_vue\\webpack-test\\dist\\js
 	filename:打包后文件的名称
-		例如： path: 'E:\\WorkSpace\\Sublime\\H5Learn\\15_vue\\webpack-test\\dist\\js
 		filename:'bundle.js',//如果是单个入口文件的话可以写死一个名称 
 		filename:'[name]-[hash].js',//如果是多个入口文件的话，可以使用这样的配置，生成的打包文件时入口文件的名称【name】+当前入口文件的hash值【hash】
 	publicPath:设置打包后的js的前面的绝对路径地址 
