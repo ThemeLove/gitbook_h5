@@ -35,9 +35,10 @@ webpack:本质上，webpack 是一个现代 JavaScript 应用程序的静态模�
 	publicPath:设置打包后的js的前面的绝对路径地址 
 		例如：publicPath:'http://www.themelove.com'//一般项目上线时配置  
 ##plugin(插件)：webpack打包过程中可以用插件实现一些特殊要求，插件可以携带参数、选项，你必须在webpack配置中，向plugins属性传入new实例。 
-	一般使用插件步骤：第一步（安装插件）：npm install pluginName --save-dev 
-					第二部（在webpack.config.js中引入）：例如：var htmlWebpackPlugin = require('html-webpack-plugin');  
-					第三部（在webpack.config.js中配置）：例如：plugins:[new pluginName({...})]
+	一般使用插件步骤：
+				第一步（安装插件）：npm install pluginName --save-dev 
+				第二部（在webpack.config.js中引入）：例如：var htmlWebpackPlugin = require('html-webpack-plugin');  
+				第三部（在webpack.config.js中配置）：例如：plugins:[new pluginName({...})]
 	常见用法：plugins:[
 				new HtmlWebpackPlugin({
 					template:'src/index.html',//使用指定的模板进行生成文件
@@ -53,6 +54,127 @@ webpack:本质上，webpack 是一个现代 JavaScript 应用程序的静态模�
 					title:'this is custom data of title',//自定义数据，可以再模板中获取
 				}),
 
-			] 
+			]  
+	内置插件：path 
+			使用：let path=require('path');
 注意事项：插件中所有配置的参数，都可以在模板中动态获取。用法类似于模板方法。如下： 
-![](https://i.imgur.com/dZntGtO.png)
+![](https://i.imgur.com/dZntGtO.png) 
+
+##loader:webpack中提供一种处理多种文件格式的机制，负责把各种文件格式通过不同的loader转化成浏览器认识的html、css；不同的loader有不同的配置，还可以链式配置，灵活性高。 
+	一般使用loader的步骤：  
+		第一步（安装loader）:
+				npm install loadername --save-dev 
+		第二步（在webpack.config.js中配置）：  
+				module: {
+					 	  rules: [
+								  {test: /\.css$/, loader: "style!css?sourceMap!postcss"},
+								  {test: /\.less$/, loader: "style!css!less|postcss"},
+								  {test: /\.scss$/, loader: "style!css!sass|postcss"}
+					 		     ]
+					    }
+							
+							
+###常用的loader 
+
+	1.loaders之 预处理
+	    css-loader 			处理css中路径引用等问题
+	    style-loader 		动态把样式写入css
+	    sass-loader 		scss编译器
+	    less-loader 		less编译器
+	    postcss-loader 		scss再处理   
+		
+		安装：npm install --save -dev css-loader style-loader sass-loader less-loader postcss-loader 
+		
+		例子：
+		module: {
+		 loaders: [
+					  {
+						test: /\.css$/, //定义匹配的规则，匹配.css文件
+						loader: "style!css?sourceMap!postcss"//指定用什么loader进行处理匹配到的.css文件，多个loader可以串联写，webpack的处理规则是从右往左执行。即先执行postcss----->css----->style
+					  },
+					  {
+ 						test: /\.less$/,//定义匹配的规则
+						loader: "style!css!less|postcss"//指定loader处理
+					  },
+					  {
+						test: /\.scss$/, //定义匹配的规则
+						loader: "style!css!sass|postcss"//指定loader处理
+					  }
+		 		  ]
+		}  
+		
+	2.loaders之 js处理
+	    babel-loader
+	    jsx-loader
+
+		安装：npm install --save-dev babel-core babel-preset-es2015 babel-loader jsx-loader 
+		
+		 module: {
+			loaders: [
+						 {
+							test: /\.js$/, //定义匹配的规则
+				            loader: "babel", exclude: /node_modules/ //指定loader处理
+				    	 },
+						 { 
+							test: /\.jsx$/, //定义匹配的规则
+						  	loader: "jsx-loader"//指定loader处理
+                         }
+			 		]
+		} 
+	
+	3.loaders之 图片处理
+	  	url-loader
+		
+	  	安装：npm install --save-dev url-loadr
+		
+		module: {
+		   loaders: [
+						 {
+							test: /\.(jpg|png)$/,//定义匹配的规则
+						    loader: "url?limit=8192"//指定loader处理，并传参数
+						 }
+		  			]
+		}
+	
+
+	4.loaders之 文件处理
+		file-loader
+
+		安装：npm install --save-dev file-loader
+		
+		module: {
+		   loaders: [
+		  				{
+						   test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/,//定义匹配的规则
+						   loader: 'file'//指定loader处理
+						}
+		 			]
+		}  
+
+	5.loaders之 json处理
+		json-loader
+		
+		安装：npm install --save-dev json-loader
+			
+		module: {
+		   loaders: [
+		  				{
+							test: /\.json$/,//定义匹配的规则
+							loader: 'json'//指定loader处理
+						}
+		   ]
+		}  
+	6.loaders之 html处理
+		raw-loader
+		
+		安装：npm install --save-dev raw-loader
+			
+		module: {
+		 	loaders: [
+		  				{
+						 	test: /\.html$/,//定义匹配的规则
+						 	loader: 'raw'//指定loader处理
+						}
+		 	]
+		} 
+
